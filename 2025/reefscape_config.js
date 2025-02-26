@@ -5,26 +5,26 @@ var config_data = `
   "page_title": "REEFSCAPE",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Nom de l'éclaireur",
       "code": "s",
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
       "required": "true"
     },
-    { "name": "Event",
+    { "name": "Événement",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025ilpe",
+      "defaultValue": "frc-2025",
       "required": "true"
     },
-    { "name": "Match Level",
+    { "name": "Niveau de Compétition",
       "code": "l",
       "type": "level",
       "choices": {
-        "qm": "Quals<br>",
-        "sf": "Semifinals<br>",
-        "f": "Finals"
+        "q": "Qualifications<br>",
+        "sf": "Demi-Finales<br>",
+        "f": "Finales"
       },
       "defaultValue": "qm",
       "required": "true"
@@ -55,7 +55,7 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Auto Start Position",
+    { "name": "Ne rien faire",
       "code": "as",
       "type": "clickable_image",
       "filename": "2025/half_field.png",
@@ -66,7 +66,7 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Leave Starting Line",
+    { "name": "Quitte le départ",
       "code": "al",
       "type": "bool"
     },
@@ -86,7 +86,7 @@ var config_data = `
       "code": "ac4",
       "type": "counter"
     },
-    { "name": "Auto Scoring Position",
+    { "name": "Ne rien faire",
       "code": "asp",
       "type": "clickable_image",
       "filename": "2025/reef.png",
@@ -94,11 +94,11 @@ var config_data = `
       "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 17 18 19 20 23 24 25 26 27 28 29 30 31 32 33 34 35 36",
       "shape": "circle 5 black red true"
     },
-    { "name": "Processor Score",
+    { "name": "Pts Processeur",
       "code": "aps",
       "type": "counter"
     },
-    { "name": "Net Score",
+    { "name": "Pts Barge",
       "code": "ans",
       "type": "counter"
     }
@@ -120,22 +120,22 @@ var config_data = `
       "code": "tc4",
       "type": "counter"
     },
-    { "name": "Processor Score",
+    { "name": "Pts Processeur",
       "code": "tps",
       "type": "counter"
     },
-    { "name": "Net Score",
+    { "name": "Pts Barge",
       "code": "tns",
       "type": "counter"
     },
-    { "name": "Pickup From",
+    { "name": "Emplacement recup corail",
       "code": "tpu",
       "type": "radio",
       "choices": {
         "s": "Coral Station<br>",
         "f": "Floor<br>",
         "b": "Both<br>",
-        "x": "Not Attempted"
+        "x": "Pas essayé"
       },
       "defaultValue": "x"
     },
@@ -145,16 +145,16 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Barge Timer",
+    { "name": "Timer Barge",
       "code": "ebt",
       "type": "timer"
     },
-    { "name": "Final Robot Status",
+    { "name": "Status Final Robot",
       "code": "efs",
       "type":"radio",
       "choices": {
-        "bp": "Parked<br>",
-        "ba": "Parked/Failed Climb<br>",
+        "bp": "Immobile<br>",
+        "ba": "Immobile/Fail<br>",
         "bs": "Shallow Cage<br>",
         "bd": "Deep Cage<br>",
         "x": "Not attempted"
@@ -163,74 +163,74 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Attained Coopertition Pt",
+    { "name": "Pt coopétition",
       "code": "cop",
       "type": "bool"
     },
-    { "name": "Algae Left in Reef",
+    { "name": "Algues restantes",
       "code": "alr",
       "type": "number",
       "min": 0,
       "max": 9,
       "defaultValue": 0
     },
-    { "name": "Driver Skill",
+    { "name": "Driver",
       "code": "ds",
       "type": "radio",
       "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
+        "n": "Pas bon<br>",
+        "a": "Moyen<br>",
+        "v": "Bon<br>",
+        "x": "Pas observé"
       },
       "defaultValue": "x"
     },
-    { "name": "Defense Rating",
+    { "name": "Defense",
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
+        "b": "Pas bon<br>",
+        "a": "Moyen<br>",
+        "g": "Bon<br>",
         "e": "Excellent<br>",
-        "x": "Did not play defense"
+        "x": "Pas joué défense"
       },
       "defaultValue": "x"
     },
-    { "name": "Speed Rating",
+    { "name": "Vitesse",
       "code": "sr",
       "type": "radio",
       "choices": {
-        "1": "1 (slow)<br>",
+        "1": "1 (lent)<br>",
         "2": "2<br>",
         "3": "3<br>",
         "4": "4<br>",
-        "5": "5 (fast)"
+        "5": "5 (rapide)"
       },
       "defaultValue":"3"
     },
-    { "name": "Died/Immobilized",
+    { "name": "Mort/immobilisé",
       "code": "die",
       "type": "bool"
     },
-    { "name": "Tippy<br>(almost tipped over)",
+    { "name": "Viré sur le côté",
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Dropped Coral (>2)",
+    { "name": "Corail échappés (>2)",
       "code": "dc",
       "type": "bool"
     },
-    { "name": "Dropped Algae (>2)",
+    { "name": "Algues échappées (>2)",
       "code": "da",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
+    { "name": "Bon partenaire d'alliance ?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
       "type": "bool"
     },
-    { "name": "Comments",
+    { "name": "Commentaires",
       "code": "co",
       "type": "text",
       "size": 15,
